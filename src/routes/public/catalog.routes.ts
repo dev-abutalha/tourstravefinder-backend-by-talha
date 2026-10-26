@@ -259,7 +259,7 @@ catalogRouter.get(
             id: String(p._id),
             name: p.title,
             href: `/products/${p.slug}`,
-            image: p.images?.[0] ?? '',
+            image: p.images?.[0]?.url ?? '',
           }));
         });
 
