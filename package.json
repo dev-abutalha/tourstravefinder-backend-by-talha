@@ -1,0 +1,61 @@
+{
+  "name": "@ttf/backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ToursTravelFinder API + Admin Panel backend (Express + MongoDB)",
+  "type": "module",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "dev:api": "tsx watch src/server.ts",
+    "dev:admin": "npm --prefix admin run dev",
+    "build": "npm --prefix admin run build && tsc -p tsconfig.json",
+    "build:admin": "npm --prefix admin run build",
+    "start": "node dist/server.js",
+    "seed": "tsx src/scripts/seed.ts",
+    "migrate:wp": "tsx src/scripts/migrate-wordpress.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "migrate:mysql": "tsx src/scripts/migrate-wordpress-mysql.ts"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "compression": "^1.8.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.19",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^9.0.0",
+    "multer": "^2.0.2",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^7.0.6",
+    "pdfkit": "^0.17.2",
+    "pino": "^9.13.1",
+    "pino-http": "^10.5.0",
+    "sanitize-html": "^2.17.0",
+    "slugify": "^1.6.6",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.8.1",
+    "@types/cookie-parser": "^1.4.9",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/multer": "^2.0.0",
+    "@types/node": "^24.10.1",
+    "@types/nodemailer": "^7.0.4",
+    "@types/pdfkit": "^0.17.4",
+    "@types/sanitize-html": "^2.16.0",
+    "@types/supertest": "^6.0.3",
+    "pino-pretty": "^13.1.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  }
+}
